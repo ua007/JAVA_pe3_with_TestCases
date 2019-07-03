@@ -7,22 +7,52 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class ChessBoardTest {
-
-    ChessBoard ob;
+    ChessBoard c1;
     @Before
-    public void setUp() throws Exception {
-        ob=new ChessBoard();
+    public void setUp(){
+        c1=new ChessBoard();
     }
 
     @After
-    public void tearDown() throws Exception {
-        ob=null;
+    public void tearDown(){
+        c1=null;
+
+    }
+
+    @Test
+    public void chess8x8()
+    {
+
+        c1.matrixInitialise(8);
+        String result=c1.setChess();
+        assertEquals("BB WW BB WW BB WW BB WW \n" +
+                "BB WW BB WW BB WW BB WW \n" +
+                "BB WW BB WW BB WW BB WW \n" +
+                "BB WW BB WW BB WW BB WW \n" +
+                "BB WW BB WW BB WW BB WW \n" +
+                "BB WW BB WW BB WW BB WW \n" +
+                "BB WW BB WW BB WW BB WW \n" +
+                "BB WW BB WW BB WW BB WW \n",result);
     }
     @Test
-    public void givenAnIntegerShouldreturnAChessBoard()
+    public void chess2x2()
     {
-        String[][] res=ob.chessBoard(2);
-        String[][] exp={{"WW|","BB|"},{"BB|","WW|"}};
-        assertEquals(exp,res);
+
+        c1.matrixInitialise(2);
+        String result=c1.setChess();
+        assertEquals("BB WW \n" +
+                "BB WW \n",result);
     }
+    @Test
+    public void chess4x4()
+    {
+
+        c1.matrixInitialise(4);
+        String result=c1.setChess();
+        assertEquals("BB WW BB WW \n" +
+                "BB WW BB WW \n" +
+                "BB WW BB WW \n" +
+                "BB WW BB WW \n",result);
+    }
+
 }

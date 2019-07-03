@@ -1,26 +1,27 @@
 package com.stackroute.pe3;
+//chess pattern print
 
-public class ChessBoard
-{
-    public String[][] chessBoard(int x)
+public class ChessBoard {
+    String[][] chess;
+    int rows,columns;
+
+    public void matrixInitialise(int rows)
     {
-        String[][] board=new String[x][x];
-        for(int i=0;i<x;i++)
-        {
-            for(int j=0;j<x;j++)
-            {
-                if((i+j)%2==0)
-                {
-                    board[i][j]="WW|";
-                }
-                else
-                {
-                    board[i][j]="BB|";
-                }
-            }
-        }
-        String[][] arr={{"WW|","BB|"},{"BB|","WW|"}};
+        this.rows=rows;
+        this.columns=rows;
+        chess=new String[rows][columns];//matrix is initiaised with rows
 
-        return board;
+    }
+    public String setChess()
+    {    int counter=0; String chessboardresult="";//variables initialised
+        for(int i=0;i<rows;i++)
+        {
+            for(int j=0;j<columns;j++)
+            {
+                chess[i][j]=(counter++%2==0)?"BB":"WW";//conditions checked
+                chessboardresult= chessboardresult.concat(chess[i][j]).concat(" ");//space concated
+            }
+            chessboardresult=chessboardresult.concat("\n");//newline added
+        }return chessboardresult;
     }
 }

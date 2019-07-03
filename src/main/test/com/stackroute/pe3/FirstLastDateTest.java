@@ -20,9 +20,33 @@ public class FirstLastDateTest {
     }
 
     @Test
-    public void theProgramReturnsFirstAndLastDateOfWeek()
+    public void FirstAndLastDayOfTheWeek()
     {
-        String res=ob.firstLastDate();
-        assertEquals("Mon 01/07/2019 Sun 07/07/2019",res);
+        FirstLastDate day=new FirstLastDate();
+        day.setCal(2019,6,4);
+        String result1=day.getFirstDay();
+        String result2=day.getLastDay();
+        assertEquals("Monday 1 6 2019",result1);
+        assertEquals("Sunday 7 6 2019",result2);
+    }
+    @Test
+    public void FirstAndLastDayOfTheWeek1()
+    {
+        FirstLastDate day=new FirstLastDate();
+        day.setCal(2019,5,29);
+        String result1=day.getFirstDay();
+        String result2=day.getLastDay();
+        assertEquals("Monday 24 5 2019",result1);
+        assertEquals("Sunday 30 5 2019",result2);
+    }
+    @Test
+    public void FirstAndLastDayOfTheWeek2()
+    {
+        FirstLastDate day=new FirstLastDate();
+        day.setCal(2019,10,19);
+        String result1=day.getFirstDay();
+        String result2=day.getLastDay();
+        assertEquals("Monday 18 10 2019",result1);
+        assertEquals("Sunday 24 10 2019",result2);
     }
 }

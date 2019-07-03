@@ -1,31 +1,31 @@
+//program to try and catch various exceptions
+
 package com.stackroute.pe3;
 
-public class CatchException {
-    public static void  main(String[] args)
+public class CatchException
+{
+    public static  void main(String args[])
     {
+
         try{
-            int[] arrayToBeTested=new int[-14];
-        }
-        catch (NegativeArraySizeException e)
+            int[] arraytobetested=new int[-19];//negative array index
+        }catch (NegativeArraySizeException e)
         {
             e.printStackTrace();
         }
-        try {
-            int[] arrayToBeTested=new int[2];
-            arrayToBeTested[4]=12;
-        }
-        catch (ArrayIndexOutOfBoundsException e)
+        try{
+            int[] arraytobetested=new int[2];
+            arraytobetested[4]=12;//array index out of bounds
+        }catch (ArrayIndexOutOfBoundsException e)
         {
             e.printStackTrace();
         }
-        try {
-            String stringToBeTested=null;
-            stringToBeTested.indexOf('a');
-        }
-        catch (NullPointerException e)
+        try{
+            String stringtobetested=null;
+            stringtobetested.indexOf('x');//index of null string
+        }catch (NullPointerException e)
         {
             e.printStackTrace();
         }
     }
-
 }
